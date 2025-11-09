@@ -1,0 +1,58 @@
+Fibonacie iterative
+
+
+#include <iostream>
+using namespace std;
+
+void fibonacciIterative(int n) {
+    int a = 0, b = 1, next;
+
+    cout << "Fibonacci series (Iterative): ";
+    for (int i = 0; i < n; i++) {
+        cout << a << " ";
+        next = a + b;
+        a = b;
+        b = next;
+    }
+    cout << endl;
+}
+
+int main() {
+    int n;
+
+    cout << "Enter the number of terms: ";
+    cin >> n;  // ✅ User enters value for n
+
+    fibonacciIterative(n);
+
+    return 0;
+}
+
+
+
+
+Fibonacie recursive
+
+#include <iostream>
+using namespace std;
+
+// Recursive function
+int fibonacciRecursive(int n) {
+    if (n <= 1)
+        return n; // Base case
+    return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2);
+}
+
+int main() {
+    int n;
+
+    cout << "Enter the number of terms: ";
+    cin >> n;  // ✅ User inputs number of terms
+
+    cout << "Fibonacci series (Recursive): ";
+    for (int i = 0; i < n; i++)
+        cout << fibonacciRecursive(i) << " ";
+
+    cout << endl;
+    return 0;
+}
